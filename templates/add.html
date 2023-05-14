@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><input type="text" name="desc"></td>
+        </tr>
+        <tr>
+            <td>Year:</td>
+            <td><input type="text" name="year"></td>
+        </tr>
+        <tr>
+            <td>Upload Image:</td>
+            <td><input type="file" name="image"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="reset" value="Clear">
+            </td>
+            <td>
+                <input type="submit">
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
