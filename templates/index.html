@@ -4,11 +4,17 @@
     <div class="row">
         {% for i in movie_list %}
             <div class="col-md-3" >
-                <div class="card" style="width:15rem; height:25rem; text-align:center;" fixed>
+                <div class="card" style="width:15rem; height:23rem; text-align:center;" fixed>
                     <image class="card-img-top" src="{{i.image.url}}" width="100" height="300"></image>
-                        {{i.name}}
-                        <a href="{% url 'edit' i.id %}">edit</a>
-                        <a href="{% url 'delete' i.id %}">delete</a>
+                       <a href="{% url 'show' i.id %}">{{i.name}}</a>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="{% url 'edit' i.id %}" class="btn btn-secondary btn-block my_custom_button" fixed>edit</a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="{% url 'delete' i.id %}" class="btn btn-secondary btn-block my_custom_button">delete</a>
+                            </div>
+                        </div>
                 </div>
             </div>
         {% endfor %}

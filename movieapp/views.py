@@ -34,3 +34,6 @@ def delete(request,id):
        # movie.save()
         return redirect('/')
     return render(request,'delete.html')
+def show(request,id):
+    movie=Movie.objects.get(id=id)
+    return render(request,'show.html',{'movie':movie})
